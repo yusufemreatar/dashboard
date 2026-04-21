@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <h1>Developer Dashboard</h1>
+    <p>Follow The Work And Learning Process.</p>
+    <button id="logoutBtn" class="btn-primary" type="button">Cikis Yap</button>
+</header>
+
+<main>
+
+<!-- LOGIN -->
+
+<section id="login" class="section active">
+    <div class="login-wrapper">
+
+        <div class="login-box">
+            <h2>Welcome Back</h2>
+            <p class="login-sub">Sign in to continue your dashboard</p>
+
+            <form>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROFILE -->
+
+<section id="home" class="profile">
+    <h2>Profile</h2>
+    
+    <div class="profile-card">
+    
+    <div class="profile-left">
+    <img src="https://i.pravatar.cc/100" alt="profile">
+    </div>
+    
+    <div class="profile-info">
+    <h3>Yusuf Emre</h3>
+    <p class="role">Frontend Developer</p>
+    
+    <div class="badges">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    </div>
+    
+    </div>
+    
+    <div class="profile-stats">
+    <div>
+    <h4>40h</h4>
+    <p>Weekly Goal</p>
+    </div>
+    
+    <div>
+    <h4>12</h4>
+    <p>Tasks Done</p>
+    </div>
+    </div>
+    
+    </div>
+</section>
+
+<!-- STATS -->
+
+<section id="stats" class="section active">
+    <h2 class="section-title">Statistics</h2>
+
+    <div class="cards">
+
+        <div class="card glow">
+            <span class="card-icon">⏱</span>
+            <h3>Study Hours</h3>
+            <p class="big">6</p>
+            <span class="sub">Today</span>
+        </div>
+
+        <div class="card glow purple">
+            <span class="card-icon">✔</span>
+            <h3>Completed Tasks</h3>
+            <p class="big">4</p>
+            <span class="sub">Total</span>
+        </div>
+
+        <div class="card glow blue">
+            <span class="card-icon">🚀</span>
+            <h3>Current Project</h3>
+            <p class="big text">Dashboard</p>
+            <span class="sub">Active</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- TASKS -->
+
+<section id="tasks" class="section active">
+    <h2 class="section-title">Tasks</h2>
+
+    <div class="task-list" id="tasksContainer">
+
+        <div class="task-card">
+            <div class="task-left">
+                <input type="checkbox">
+                <span>HTML çalış</span>
+            </div>
+            <span class="badge today">Today</span>
+        </div>
+
+        <div class="task-card">
+            <div class="task-left">
+                <input type="checkbox">
+                <span>CSS Grid öğren</span>
+            </div>
+            <span class="badge high">High</span>
+        </div>
+
+        <div class="task-card">
+            <div class="task-left">
+                <input type="checkbox">
+                <span>Dashboard geliştir</span>
+            </div>
+            <span class="badge project">Project</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROGRESS -->
+
+<section id="progress" class="section">
+    <h2 class="section-title">Progress</h2>
+
+    <div class="progress-container">
+
+        <div class="progress-card">
+            <div class="progress-info">
+                <span>HTML</span>
+                <span>%85</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill html"></div>
+            </div>
+        </div>
+
+        <div class="progress-card">
+            <div class="progress-info">
+                <span>CSS</span>
+                <span>%70</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill css"></div>
+            </div>
+        </div>
+
+        <div id="adminProgressList"></div>
+
+    </div>
+</section>
+
+<!-- ADMIN -->
+
+<section id="admin" class="section">
+    <h2 class="section-title">Admin Panel</h2>
+
+    <div class="admin-container">
+
+        <!-- FORM -->
+        <div class="admin-form">
+            <h3>Yeni Görev Oluştur</h3>
+
+            <div class="form-group">
+                <label>Görev Başlığı</label>
+                <input type="text" id="taskInput" placeholder="Örn: React öğren">
+            </div>
+
+            <div class="form-group">
+                <label>Öncelik</label>
+                <select id="taskPriority">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+            </div>
+
+            <button onclick="addTask()" class="btn-primary">
+                + Görev Ekle
+            </button>
+        </div>
+
+        <!-- PREVIEW -->
+        <div class="admin-preview">
+            <h3>Eklenen Görevler</h3>
+            <ul id="taskList"></ul>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<!-- NAV -->
+
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#stats">Statistics</a></li>
+<li><a href="#tasks">Tasks</a></li>
+<li><a href="#progress">Progress</a></li>
+<li><a href="#admin">Admin</a></li>
+</ul>
+</nav>
+
+<footer>
+<p>2026 Dashboard Project</p>
+</footer>
+
+<script>
+const TASK_STORAGE_KEY = "dashboardTasksV1";
+const LOGIN_STORAGE_KEY = "dashboardLoggedInV1";
+
+function getPriorityLabel(priority) {
+    if (priority === "high") return "High";
+    if (priority === "medium") return "Medium";
+    return "Low";
+}
+
+function setLoginVisibility(isLoggedIn) {
+    const loginSection = document.getElementById("login");
+    const logoutBtn = document.getElementById("logoutBtn");
+    loginSection.style.display = isLoggedIn ? "none" : "block";
+    logoutBtn.style.display = isLoggedIn ? "inline-block" : "none";
+}
+
+function initLoginFlow() {
+    const loginForm = document.querySelector("#login form");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        localStorage.setItem(LOGIN_STORAGE_KEY, "1");
+        setLoginVisibility(true);
+        window.location.hash = "#home";
+    });
+
+    logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem(LOGIN_STORAGE_KEY);
+        setLoginVisibility(false);
+        window.location.hash = "#login";
+    });
+
+    const isLoggedIn = localStorage.getItem(LOGIN_STORAGE_KEY) === "1";
+    setLoginVisibility(isLoggedIn);
+}
+
+function updateTaskProgress() {
+    const allTaskCheckboxes = document.querySelectorAll("#tasksContainer input[type='checkbox']");
+    const total = allTaskCheckboxes.length;
+    const done = [...allTaskCheckboxes].filter((box) => box.checked).length;
+
+    renderAdminTaskProgress();
+}
+
+function renderAdminTaskProgress() {
+    const adminProgressList = document.getElementById("adminProgressList");
+    const taskCards = document.querySelectorAll("#tasksContainer .task-card");
+    const customTasks = [...taskCards].filter((card) => card.dataset.custom === "1");
+
+    adminProgressList.innerHTML = "";
+
+    customTasks.forEach((card) => {
+        const checkbox = card.querySelector("input[type='checkbox']");
+        const title = card.querySelector(".task-left span")?.textContent?.trim() || "Yeni Görev";
+        const percent = checkbox.checked ? 100 : 0;
+
+        const progressCard = document.createElement("div");
+        progressCard.className = "progress-card";
+        progressCard.innerHTML = `
+            <div class="progress-info">
+                <span>${title}</span>
+                <span>%${percent}</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill js" style="width:${percent}%"></div>
+            </div>
+        `;
+
+        adminProgressList.appendChild(progressCard);
+    });
+}
+
+function saveTasksToStorage() {
+    const taskCards = document.querySelectorAll("#tasksContainer .task-card");
+    const tasks = [...taskCards].map((card) => {
+        const checkbox = card.querySelector("input[type='checkbox']");
+        const title = card.querySelector(".task-left span")?.textContent?.trim() || "";
+        const badgeEl = card.querySelector(".badge");
+        const badgeClass = [...badgeEl.classList].filter((c) => c !== "badge").join(" ");
+        const badgeText = badgeEl.textContent.trim();
+        return {
+            title,
+            badgeClass,
+            badgeText,
+            checked: checkbox.checked,
+            custom: card.dataset.custom === "1",
+            dotClass: card.dataset.dotClass || ""
+        };
+    });
+
+    localStorage.setItem(TASK_STORAGE_KEY, JSON.stringify(tasks));
+}
+
+function createAdminPreviewItem(task) {
+    if (!task.custom) return;
+
+    const adminList = document.getElementById("taskList");
+    const li = document.createElement("li");
+    li.innerHTML = `
+        <div class="task-left">
+            <span class="task-dot ${task.dotClass}"></span>
+            <span class="task-text">${task.title}</span>
+        </div>
+        <span class="task-badge ${task.dotClass}">
+            ${task.badgeText.toUpperCase()}
+        </span>
+    `;
+    adminList.appendChild(li);
+}
+
+function createTaskCard(task) {
+    const tasksContainer = document.getElementById("tasksContainer");
+    const taskCard = document.createElement("div");
+    taskCard.className = "task-card";
+    taskCard.dataset.custom = task.custom ? "1" : "0";
+    taskCard.dataset.dotClass = task.dotClass || "";
+
+    taskCard.innerHTML = `
+        <div class="task-left">
+            <input type="checkbox" ${task.checked ? "checked" : ""}>
+            <span>${task.title}</span>
+        </div>
+        <span class="badge ${task.badgeClass}">${task.badgeText}</span>
+    `;
+
+    const checkbox = taskCard.querySelector("input[type='checkbox']");
+    checkbox.addEventListener("change", () => {
+        updateTaskProgress();
+        saveTasksToStorage();
+    });
+
+    tasksContainer.appendChild(taskCard);
+}
+
+function captureInitialTasks() {
+    const taskCards = document.querySelectorAll("#tasksContainer .task-card");
+    const tasks = [...taskCards].map((card) => {
+        const checkbox = card.querySelector("input[type='checkbox']");
+        const title = card.querySelector(".task-left span")?.textContent?.trim() || "";
+        const badgeEl = card.querySelector(".badge");
+        const badgeClass = [...badgeEl.classList].filter((c) => c !== "badge").join(" ");
+        const badgeText = badgeEl.textContent.trim();
+        return {
+            title,
+            badgeClass,
+            badgeText,
+            checked: checkbox.checked,
+            custom: false,
+            dotClass: ""
+        };
+    });
+
+    localStorage.setItem(TASK_STORAGE_KEY, JSON.stringify(tasks));
+}
+
+function loadTasksFromStorage() {
+    const tasksContainer = document.getElementById("tasksContainer");
+    const adminList = document.getElementById("taskList");
+    const raw = localStorage.getItem(TASK_STORAGE_KEY);
+
+    if (!raw) {
+        captureInitialTasks();
+        return;
+    }
+
+    const tasks = JSON.parse(raw);
+    tasksContainer.innerHTML = "";
+    adminList.innerHTML = "";
+
+    tasks.forEach((task) => {
+        createTaskCard(task);
+        createAdminPreviewItem(task);
+    });
+
+    renderAdminTaskProgress();
+}
+
+function addTask() {
+    const input = document.getElementById("taskInput");
+    const priority = document.getElementById("taskPriority");
+
+    const taskName = input.value.trim();
+    if (taskName === "") return;
+
+    const priorityLabel = getPriorityLabel(priority.value);
+    const task = {
+        title: taskName,
+        badgeClass: priority.value,
+        badgeText: priorityLabel,
+        checked: false,
+        custom: true,
+        dotClass: priority.value
+    };
+
+    createAdminPreviewItem(task);
+    createTaskCard(task);
+    saveTasksToStorage();
+    updateTaskProgress();
+    input.value = "";
+}
+
+loadTasksFromStorage();
+updateTaskProgress();
+initLoginFlow();
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Dashboard | Tasks</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body data-page="tasks">
+<div class="layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">DD</span>
+            <div>
+                <p class="brand-kicker">Workspace</p>
+                <h1>Developer Dashboard</h1>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Main menu">
+            <a href="index.html" data-nav="home">Profile</a>
+            <a href="statistics.html" data-nav="statistics">Statistics</a>
+            <a href="tasks.html" data-nav="tasks">Tasks</a>
+            <a href="progress.html" data-nav="progress">Progress</a>
+            <a href="admin.html" data-nav="admin">Admin</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <p class="eyebrow">Workspace</p>
+            <strong>Task execution screen</strong>
+            <span>Checking and tracking actions live only on this page.</span>
+        </div>
+    </aside>
+
+    <div class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Tasks page</p>
+                <h2>List, status updates, and counters</h2>
+            </div>
+            <button id="logoutBtn" class="button ghost" type="button">Log Out</button>
+        </header>
+
+        <main class="page">
+            <section class="hero-panel compact task-hero">
+                <div>
+                    <p class="eyebrow">Workflow</p>
+                    <h3>Manage your tasks from one focused screen.</h3>
+                </div>
+                <div class="hero-inline-stats">
+                    <div>
+                        <strong id="taskSummaryTotal">0</strong>
+                        <span>Total</span>
+                    </div>
+                    <div>
+                        <strong id="taskSummaryDone">0</strong>
+                        <span>Completed</span>
+                    </div>
+                    <div>
+                        <strong id="taskSummaryPending">0</strong>
+                        <span>Open</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Interactive board</p>
+                        <h3>Task cards</h3>
+                    </div>
+                    <span class="status-pill" id="taskCounter"></span>
+                </div>
+
+                <div class="task-filters" id="taskFilters"></div>
+                <div class="task-toolbar">
+                    <label class="toolbar-field">
+                        <span>Search</span>
+                        <input type="search" id="taskSearchInput" placeholder="Search by task title">
+                    </label>
+
+                    <label class="toolbar-field">
+                        <span>Sort By</span>
+                        <select id="taskSortSelect">
+                            <option value="deadline">Deadline urgency</option>
+                            <option value="priority">Priority</option>
+                            <option value="updated">Last updated</option>
+                            <option value="progress">Progress</option>
+                            <option value="title">Title</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="task-insight-row" id="taskInsightRow"></div>
+                <div class="task-list upgraded" id="tasksContainer"></div>
+            </section>
+        </main>
+
+        <div class="modal-shell" id="taskEditorModal" aria-hidden="true">
+            <div class="modal-backdrop" data-edit-close></div>
+            <div class="modal-card">
+                <div class="modal-head">
+                    <div>
+                        <p class="eyebrow">Task editor</p>
+                        <h3 id="editTaskNamePreview">Task</h3>
+                        <span class="inline-helper">Current status: <strong id="editTaskStatusPreview">Pending</strong></span>
+                    </div>
+                    <button class="button ghost" type="button" data-edit-close>Close</button>
+                </div>
+
+                <form id="taskEditForm" class="form-grid">
+                    <label>
+                        <span>Task title</span>
+                        <input type="text" id="editTaskTitle" required>
+                    </label>
+
+                    <label>
+                        <span>Priority level</span>
+                        <select id="editTaskPriority">
+                            <option value="low">Low Priority</option>
+                            <option value="medium">Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Due date</span>
+                        <input type="date" id="editTaskDueDate" required>
+                    </label>
+
+                    <label>
+                        <span>Reason / note</span>
+                        <textarea id="editTaskReason" rows="3" placeholder="Optional context for this task"></textarea>
+                    </label>
+
+                    <div class="subtask-edit-grid">
+                        <label>
+                            <span>Subtask 1</span>
+                            <input type="text" id="editSubtask1" required>
+                        </label>
+                        <label>
+                            <span>Subtask 2</span>
+                            <input type="text" id="editSubtask2" required>
+                        </label>
+                        <label>
+                            <span>Subtask 3</span>
+                            <input type="text" id="editSubtask3" required>
+                        </label>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="button primary" type="submit">Save Changes</button>
+                        <button class="button ghost" type="button" data-edit-close>Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

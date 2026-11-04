@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Dashboard | Statistics</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body data-page="statistics">
+<div class="layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">DD</span>
+            <div>
+                <p class="brand-kicker">Workspace</p>
+                <h1>Developer Dashboard</h1>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Main menu">
+            <a href="index.html" data-nav="home">Profile</a>
+            <a href="statistics.html" data-nav="statistics">Statistics</a>
+            <a href="tasks.html" data-nav="tasks">Tasks</a>
+            <a href="progress.html" data-nav="progress">Progress</a>
+            <a href="admin.html" data-nav="admin">Admin</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <p class="eyebrow">Analytics</p>
+            <strong>Performance cards</strong>
+            <span>Task distribution and completion rate are displayed here.</span>
+        </div>
+    </aside>
+
+    <div class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Statistics page</p>
+                <h2>Numeric overview and breakdowns</h2>
+            </div>
+            <button id="logoutBtn" class="button ghost" type="button">Log Out</button>
+        </header>
+
+        <main class="page">
+            <section class="card-grid" id="statsCards"></section>
+
+            <section class="panel">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Executive insight</p>
+                        <h3>Interpreted performance notes</h3>
+                    </div>
+                </div>
+                <div class="insight-list" id="statsExecutiveInsights"></div>
+            </section>
+
+            <section class="page-grid two-col statistics-showcase">
+                <article class="panel panel-accent">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Pulse trend</p>
+                            <h3>Weekly completion momentum</h3>
+                        </div>
+                        <span class="status-pill">Live pulse</span>
+                    </div>
+
+                    <div class="trend-chart-card">
+                        <div class="trend-copy">
+                            <strong id="trendHeadline">0%</strong>
+                            <span id="trendSubline">Completion trend across this week</span>
+                        </div>
+                        <div class="trend-chart" id="trendChart"></div>
+                    </div>
+                </article>
+
+                <article class="panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Priority ratio</p>
+                            <h3>Task energy balance</h3>
+                        </div>
+                    </div>
+
+                    <div class="donut-layout">
+                        <div class="donut-ring" id="priorityDonut">
+                            <div class="donut-core">
+                                <strong id="donutCenterValue">0%</strong>
+                                <span>High priority share</span>
+                            </div>
+                        </div>
+                        <div class="legend-list" id="priorityLegend"></div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="page-grid two-col">
+                <article class="panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Weekly chart</p>
+                            <h3>Task rhythm</h3>
+                        </div>
+                    </div>
+                    <div class="bar-chart" id="weeklyBars"></div>
+                </article>
+
+                <article class="panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Task states</p>
+                            <h3>Current execution states</h3>
+                        </div>
+                    </div>
+                    <div class="stack-list" id="priorityBreakdown"></div>
+                </article>
+            </section>
+
+            <section class="panel">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Execution table</p>
+                        <h3>Task summary table</h3>
+                    </div>
+                </div>
+
+                <div class="data-table-wrapper">
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th>Due Date</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody id="statsTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>

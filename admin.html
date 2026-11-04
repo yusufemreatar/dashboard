@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Dashboard | Admin</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body data-page="admin">
+<div class="layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">DD</span>
+            <div>
+                <p class="brand-kicker">Workspace</p>
+                <h1>Developer Dashboard</h1>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Main menu">
+            <a href="index.html" data-nav="home">Profile</a>
+            <a href="statistics.html" data-nav="statistics">Statistics</a>
+            <a href="tasks.html" data-nav="tasks">Tasks</a>
+            <a href="progress.html" data-nav="progress">Progress</a>
+            <a href="admin.html" data-nav="admin">Admin</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <p class="eyebrow">Management</p>
+            <strong>New task creation panel</strong>
+            <span>The form, preview, and quick management summary live on this page.</span>
+        </div>
+    </aside>
+
+    <div class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Admin page</p>
+                <h2>Create tasks and manage the summary list</h2>
+            </div>
+            <button id="logoutBtn" class="button ghost" type="button">Log Out</button>
+        </header>
+
+        <main class="page">
+            <section class="page-grid two-col">
+                <article class="panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">New task</p>
+                            <h3>Task form</h3>
+                        </div>
+                    </div>
+
+                    <p class="muted section-note">
+                        Every new task automatically receives 3 smart subtasks, a due date, and a progress-ready structure.
+                    </p>
+
+                    <form id="taskForm" class="form-grid">
+                        <label>
+                            <span>Task title</span>
+                            <input type="text" id="taskInput" placeholder="Example: Build a React component structure" required>
+                        </label>
+
+                        <label>
+                            <span>Priority level</span>
+                            <select id="taskPriority">
+                                <option value="low">Low Priority</option>
+                                <option value="medium" selected>Medium Priority</option>
+                                <option value="high">High Priority</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Due date</span>
+                            <input type="date" id="taskDueDate" required>
+                        </label>
+
+                        <button class="button primary" type="submit">+ Add Task</button>
+                    </form>
+
+                    <p class="inline-helper">Need to adjust title, subtasks, or reason later? Use the edit flow on the Tasks page.</p>
+                </article>
+
+                <article class="panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Management summary</p>
+                            <h3>Live counters</h3>
+                        </div>
+                    </div>
+
+                    <div class="metric-grid" id="adminOverview"></div>
+                </article>
+            </section>
+
+            <section class="panel">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Added items</p>
+                        <h3>Custom task preview</h3>
+                    </div>
+                </div>
+                <div class="stack-list" id="taskList"></div>
+            </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>

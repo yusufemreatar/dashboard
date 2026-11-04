@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Dashboard | Login</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body data-page="login" class="auth-page">
+<main class="auth-shell">
+    <section class="auth-card">
+        <p class="eyebrow">Developer Dashboard</p>
+        <h1>Welcome Your Dashboard</h1>
+        <p class="muted">
+            Sign in to access your profile, statistics, tasks, progress, and admin pages in one organized workspace.
+        </p>
+
+        <form id="loginForm" class="auth-form">
+            <label>
+                <span>Username</span>
+                <input type="text" name="username" placeholder="example user" required>
+            </label>
+
+            <label>
+                <span>Password</span>
+                <input type="password" name="password" placeholder="******" required>
+            </label>
+
+            <button class="button primary" type="submit">Enter Dashboard</button>
+        </form>
+    </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Dashboard | Profile</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body data-page="home">
+<div class="layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">DD</span>
+            <div>
+                <p class="brand-kicker">Workspace</p>
+                <h1>Developer Dashboard</h1>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Main menu">
+            <a href="index.html" data-nav="home">Profile</a>
+            <a href="statistics.html" data-nav="statistics">Statistics</a>
+            <a href="tasks.html" data-nav="tasks">Tasks</a>
+            <a href="progress.html" data-nav="progress">Progress</a>
+            <a href="admin.html" data-nav="admin">Admin</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <p class="eyebrow">Status</p>
+            <strong>Weekly goal tracking is active</strong>
+            <span>Each page now presents its own content and dedicated actions.</span>
+        </div>
+    </aside>
+
+    <div class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Profile area</p>
+                <h2>Overview and personal card</h2>
+            </div>
+            <button id="logoutBtn" class="button ghost" type="button">Log Out</button>
+        </header>
+
+        <main class="page">
+            <section class="hero-panel cinematic-hero">
+                <div class="hero-copy">
+                    <p class="eyebrow">Mission control</p>
+                    <h3>Build sharper momentum with a dashboard that feels alive.</h3>
+                    <p class="muted">
+                        Track priorities, spotlight the next move, and turn weekly progress into something you can read
+                        in a single glance.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button primary" href="tasks.html">Open Task Board</a>
+                        <a class="button ghost" href="statistics.html">View Analytics</a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <article>
+                            <span class="eyebrow">Streak</span>
+                            <strong id="heroStreakValue">0 days</strong>
+                        </article>
+                        <article>
+                            <span class="eyebrow">Velocity</span>
+                            <strong id="heroVelocityValue">0 tasks</strong>
+                        </article>
+                        <article>
+                            <span class="eyebrow">Focus rate</span>
+                            <strong id="heroFocusRateValue">0%</strong>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="hero-stage">
+                    <span class="hero-orb orb-one"></span>
+                    <span class="hero-orb orb-two"></span>
+                    <span class="hero-orb orb-three"></span>
+
+                    <article class="spotlight-card">
+                        <p class="eyebrow">Current focus</p>
+                        <strong id="heroFocusTitle">Loading focus...</strong>
+                        <span id="heroFocusMeta">Preparing the next priority for you.</span>
+                    </article>
+
+                    <div class="hero-mini-grid">
+                        <article>
+                            <span>Completion</span>
+                            <strong id="heroStageCompletion">0%</strong>
+                        </article>
+                        <article>
+                            <span>Pending</span>
+                            <strong id="heroStagePending">0</strong>
+                        </article>
+                        <article>
+                            <span>Custom</span>
+                            <strong id="heroStageCustom">0</strong>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel profile-panel">
+                <div class="profile-card">
+                    <div class="profile-main">
+                        <img src="https://i.pravatar.cc/160?img=12" alt="Profile picture">
+                        <div>
+                            <p class="eyebrow">Growth profile</p>
+                            <h3>Yusuf Emre</h3>
+                            <p class="muted">Frontend Developer</p>
+                            <div class="skill-pills">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-stats">
+                        <div>
+                            <strong>40h</strong>
+                            <span>Weekly goal</span>
+                        </div>
+                        <div>
+                            <strong id="homeCompletedCount">0</strong>
+                            <span>Completed tasks</span>
+                        </div>
+                        <div>
+                            <strong id="homePendingCount">0</strong>
+                            <span>Open tasks</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-grid two-col">
+                <article class="panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Quick metrics</p>
+                            <h3>Today's summary</h3>
+                        </div>
+                    </div>
+                    <div class="metric-grid" id="homeOverview"></div>
+                </article>
+
+                <article class="panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Operations feed</p>
+                            <h3>Recent activity</h3>
+                        </div>
+                    </div>
+                    <div class="stack-list" id="homeActivityFeed"></div>
+                </article>
+            </section>
+
+            <section class="panel">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Executive insight</p>
+                        <h3>What the dashboard is telling you</h3>
+                    </div>
+                </div>
+                <div class="insight-list" id="homeExecutiveInsights"></div>
+            </section>
+
+            <section class="panel">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Upcoming work</p>
+                        <h3>Focus list</h3>
+                    </div>
+                </div>
+                <div class="stack-list" id="homeTaskPreview"></div>
+            </section>
+
+            <section class="panel">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Project walkthrough</p>
+                        <h3>Embedded dashboard preview</h3>
+                    </div>
+                </div>
+
+                <div class="iframe-shell">
+                    <iframe
+                        class="embed-frame"
+                        src="statistics.html"
+                        title="Embedded statistics preview"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>

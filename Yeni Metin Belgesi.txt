@@ -1,0 +1,41 @@
+1.Görev sistemini geliştirdik.
+Artık görevler sadece eklenmiyor; durum değiştirme, tamamlama, yeniden açma, bloklama, atlama ve iptal etme akışları da var.
+
+2.Görevlere alt görev yapısı ekledik.
+Her ana görev için 3 alt görev oluşturuluyor ve ilerleme yüzdesi bu alt görevler üzerinden hesaplanıyor.
+
+3.Görevlere due date / deadline sistemi ekledik.
+Böylece görevlerin ne zaman bitmesi gerektiği takip edilebiliyor.
+
+4.Görev düzenleme özelliği ekledik.
+Kullanıcı artık görev adı, öncelik, teslim tarihi, açıklama ve alt görevleri sonradan güncelleyebiliyor.
+
+5.Activity history sistemi ekledik.
+Her görev için oluşturulma, güncellenme, tamamlanma, bloklanma ve silinme gibi hareketler kayıt altına alınıyor.
+
+6.Ana sayfaya yönetici özeti niteliğinde yeni widget’lar ekledik.
+Overdue tasks, Tasks due today, Blocked tasks ve Completion this week gibi kritik göstergeler öne çıkarıldı.
+
+7.Statistics sayfasını daha güçlü hale getirdik.
+Grafikler, oranlar, görev özeti tablosu ve yorumlayan insight alanları eklendi.
+
+8.Tasks sayfasını daha interaktif yaptık.
+Filtreleme, arama, sıralama ve risk etiketleriyle görev takibi daha profesyonel bir yapıya dönüştü.
+
+9.Deadline risk sistemi ekledik.
+Görevler artık Safe, Due Soon, At Risk, Overdue gibi etiketlerle daha net okunabiliyor.
+
+10.Uygulamaya toast notification sistemi ekledik.
+Görev ekleme, güncelleme, silme veya durum değiştirme sonrasında kullanıcı anlık geri bildirim alıyor.
+
+11.Final kriterlerine uygun zorunlu HTML öğelerini tamamladık.
+Projeye form, table, iframe, video, audio ve image yapıları eklendi.
+
+12.Progress sayfasına medya alanı ekledik.
+Burada hem video hem de ses oynatıcı bulunuyor.
+
+13.Video yapısını geliştirdik.
+Tek sahnelik içerik yerine tüm dashboard bölümlerini sırayla gösteren bir walkthrough video mantığı kurduk.
+
+14.Ses tarafını da güçlendirdik.
+Sadece audio alanı değil, kullanıcı etkileşimlerinde çalışan hafif tıklama sesleri de eklendi.

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Dashboard | Progress</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body data-page="progress">
+<div class="layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">DD</span>
+            <div>
+                <p class="brand-kicker">Workspace</p>
+                <h1>Developer Dashboard</h1>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Main menu">
+            <a href="index.html" data-nav="home">Profile</a>
+            <a href="statistics.html" data-nav="statistics">Statistics</a>
+            <a href="tasks.html" data-nav="tasks">Tasks</a>
+            <a href="progress.html" data-nav="progress">Progress</a>
+            <a href="admin.html" data-nav="admin">Admin</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <p class="eyebrow">Tracking</p>
+            <strong>Skill and task progress</strong>
+            <span>Static skills and dynamic task states appear together here.</span>
+        </div>
+    </aside>
+
+    <div class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Progress page</p>
+                <h2>Skill bars and task completion status</h2>
+            </div>
+            <button id="logoutBtn" class="button ghost" type="button">Log Out</button>
+        </header>
+
+        <main class="page">
+            <section class="hero-panel compact">
+                <div>
+                    <p class="eyebrow">Overall rate</p>
+                    <h3 id="overallProgressLabel">Overall completion: 0%</h3>
+                </div>
+                <div class="overall-track">
+                    <div class="overall-fill" id="overallProgressBar"></div>
+                </div>
+            </section>
+
+            <section class="page-grid two-col">
+                <article class="panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Core skills</p>
+                            <h3>Fixed growth areas</h3>
+                        </div>
+                    </div>
+                    <div class="progress-list" id="skillProgressList"></div>
+                </article>
+
+                <article class="panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Task-based status</p>
+                            <h3>Progress across all tasks</h3>
+                        </div>
+                    </div>
+                    <div class="progress-list" id="customProgressList"></div>
+                </article>
+            </section>
+
+            <section class="page-grid two-col media-grid">
+                <article class="panel media-panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Demo media</p>
+                            <h3>Project video preview</h3>
+                        </div>
+                    </div>
+                    <video id="progressDemoVideo" class="media-player video-player" controls preload="metadata"></video>
+                    <p class="media-caption" id="progressVideoCaption">
+                        The dashboard will generate a short local walkthrough clip for this page.
+                    </p>
+                </article>
+
+                <article class="panel media-panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Audio note</p>
+                            <h3>Project voice-style cue</h3>
+                        </div>
+                    </div>
+                    <audio id="progressDemoAudio" class="media-player audio-player" controls preload="metadata"></audio>
+                    <p class="media-caption" id="progressAudioCaption">
+                        A short local audio cue will be attached here for final delivery completeness.
+                    </p>
+                </article>
+            </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>
